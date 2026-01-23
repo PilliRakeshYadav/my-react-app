@@ -1,0 +1,112 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+   
+}
+.dark .header {
+ background: linear-gradient(90deg, #252035 0%, #31294d 100%);
+}
+.app-logo {
+  width: 160px;
+  height: 55px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu-icon {
+  width: 22px;
+  cursor: pointer;
+}
+
+.dark-mode-button {
+  width: 43px;
+  height: 18px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.dark-mode-button::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #f4a100;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.dark-mode-button.dark-active::after {
+  background: #333;
+  left: 27px;
+}
+
+.backdrop-top {
+  position: fixed;
+  inset: 0;
+  z-index: 98;
+}
+
+.menu-block {
+  position: fixed;
+  top: 30px;
+  right: 0;
+  width: 0;
+  height: calc(100vh - 60px);
+  background: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(40px);
+  border-radius: 10px;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.43);
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.menu-block.show-menu {
+  width: 22%;
+  right: 30px;
+  opacity: 1;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 20px;
+}
+
+.nav-list li {
+  margin: 20px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-list li:hover {
+  background: linear-gradient(90deg, #ff4e50 0%, #f9d423 124%);
+  color: white;
+}
+
+.dark .menu-block {
+  background: rgba(51, 46, 46, 0.38);
+}
+
+.dark .nav-list li {
+  color: #fff;
+}
+

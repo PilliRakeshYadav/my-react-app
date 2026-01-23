@@ -1,0 +1,22 @@
+/* LIGHT MODE (default) */
+:root {
+  --header-bg: #ffffff;
+  --card-bg: #ffffff;
+  --text-color: #222;
+  --page-bg: #f4f4f4;
+}
+
+/* DARK MODE */
+body[data-theme="dark"] {
+  --header-bg: #1e1e1e;
+  --card-bg: #2a2a2a;
+  --text-color: #f1f1f1;
+  --page-bg: #121212;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}

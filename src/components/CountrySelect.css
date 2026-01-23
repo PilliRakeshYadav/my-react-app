@@ -1,0 +1,89 @@
+.country-select-wrapper {
+  position: relative;
+  font-size: 13px;
+}
+
+.country-select-trigger {
+  width: 55px;
+  height: 36px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+.flag-img {
+  width: 18px;
+  height: 11px;
+  background-image: url("../assets/country-flags.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  flex-shrink: 0;
+}
+
+.country-select-trigger .dial {
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.arrow-icon {
+  width: 10px;
+  height: 10px;
+  transition: transform 0.25s ease;
+}
+
+.arrow-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.country-dropdown {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  width: 260px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  list-style: none;
+  padding: 6px 0;
+  z-index: 1000;
+  min-height: 34px;
+}
+
+.country-dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.country-dropdown li:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.country-dropdown .name {
+  flex: 1;
+  color: #333;
+}
+
+.country-dropdown .dial {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.country-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.country-dropdown::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+}

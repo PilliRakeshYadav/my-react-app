@@ -1,0 +1,254 @@
+.home-section {
+  width: 100%;
+  position: relative;
+
+  background-image: url("../assets/home-bg2.svg");
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+[data-theme="dark"] .home-section {
+  background-image: url("../assets/home-bg2-dark.svg");
+   background-size: contain;
+}
+
+[data-theme="dark"] .home-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.compare-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto 0;
+   display: flex;
+  justify-content: center;
+  position: relative;
+  padding-top: 30px;
+  margin-left: 40px;
+  margin-top: -5px;
+}
+
+.center-content {
+  display: block;
+  padding-top: 140px;            
+  padding-left: 120px;          
+  padding-bottom: 80px;
+}
+
+.dis-flex {
+  display: flex;
+}
+
+.item-center {
+  align-items: center;
+}
+
+.hero-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+  font-family: "LatoBold";
+}
+
+.hero-text {
+  max-width: 460px;
+}
+.hero-text .main-title {
+  margin: 0;
+  font-size: 34px; 
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+  color: #ffffff;
+}
+
+.main-title .line-1,
+.main-title .line-2 {
+  display: block;
+  white-space: nowrap;
+}
+
+.main-title .dis-block {
+  display: block;
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.how-it-works {
+  margin-top: -10px;
+}
+
+.how-it-works-p {
+  font-size: 28px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-right: 14px;
+  cursor: pointer;
+}
+
+.how-image {
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.how-image:hover {
+  transform: scale(1.12);
+  opacity: 0.9;
+}
+
+.compare-image {
+  width: 320px;
+  max-width: 90%;
+  margin-top: -40px;
+}
+.platform-bar {
+  position: absolute;
+  top: -28px;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+/* .platform-switch {
+  display: flex;
+  background: white;
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 2px;
+} */
+ .platform-switch {
+  width: 60px;
+  height: 28px;
+  background: #fff;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  padding: 4px;
+}
+
+
+/* .platform-switch button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  border: none;
+  padding: 6px 12px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+} */
+.platform-switch button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+/* 
+.platform-switch button img {
+  width: 18px;
+  height: 18px;
+} */
+ .platform-switch button img {
+  width: 16px;
+  height: 16px;
+  transition: 0.3s ease;
+}
+.platform-switch button.active img {
+  filter: invert(100%) brightness(200%);
+}
+
+
+.platform-switch::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #870000 0%, #190a05 100%);
+  left: 4px;
+  transition: 0.3s ease;
+  z-index: 1;
+}
+.platform-switch.android-active::before {
+  left: 4px;
+}
+.platform-switch.ios-active::before {
+  left: 34px;
+}
+
+
+/* .platform-switch button.active {
+  background: black;
+  font-weight: 600;
+  border-radius: 35px;
+} */
+
+.country-select {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+
+  padding: 6px 10px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.country-select select {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .platform-bar {
+    top: -26px;
+    left: 12px;
+    gap: 8px;
+  }
+
+  .platform-switch button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+
+  
+
