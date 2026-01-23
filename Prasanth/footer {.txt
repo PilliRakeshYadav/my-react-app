@@ -1,0 +1,307 @@
+/* footer {
+  width: 100%;
+  background: transparent;
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+}
+.footer-section {
+  width: 100%;
+  background: transparent;
+}
+
+.content-block {
+    width: 1140px;
+    margin: auto;
+}
+footer .footer-list {
+    list-style: none;
+    gap: 88px;
+    margin-bottom: 40px;
+}
+.dis-flex {
+    display: flex;
+}
+footer a {
+    color: #9a9ea6;
+    font-size: 14px;
+}
+footer .footer-logo {
+    flex: 2;
+    text-align: left;
+}
+footer .footer-copyrights {
+    text-align: right;
+    flex: 2;
+    margin-bottom: 30px;
+}
+.pad-b-15 {
+    padding-bottom: 15px;
+}
+footer p {
+    font-size: 14px;
+    color: #9a9ea6;
+}
+p {
+    line-height: 25px;
+}
+#button-scroll-top {
+    transform: rotate(90deg);
+}
+.show-scroll-top {
+    position: fixed;
+    bottom: 20px;
+    z-index: 99999;
+    right: 20px;
+    background: linear-gradient(90deg, #FF4E50 0%, #F9D423 124.44%);
+    padding: 12px 14px;
+    border-radius: 40px;
+    cursor: pointer;
+    opacity: .6;
+}
+#button-scroll-top .scroll-icon {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+    transition: .3s;
+} */
+
+
+
+
+
+
+.wrapper {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 200px;
+}
+.dark .wrapper {
+    background: var(--color-blue-dark);
+} 
+
+footer {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+.content-block {
+    width: 1140px;
+    margin: auto;
+}
+footer .footer-list {
+    list-style: none;
+    gap: 88px;
+    margin-bottom: 40px;
+}
+.dis-flex {
+    display: flex;
+}
+footer a {
+    color: #9a9ea6;
+    font-size: 14px;
+}
+.dis-flex {
+    display: flex;
+}
+footer .footer-logo {
+    flex: 2;
+    text-align: left;
+}
+footer .footer-copyrights {
+    text-align: right;
+    flex: 2;
+    margin-bottom: 30px;
+}
+.pad-b-15 {
+    padding-bottom: 15px;
+}
+footer p {
+    font-size: 14px;
+    color: #9a9ea6;
+}
+p {
+    line-height: 25px;
+}
+#button-scroll-top {
+    transform: rotate(90deg);
+}
+.dark .show-scroll-top {
+    background: var(--color-779);
+}
+.show-scroll-top {
+    position: fixed;
+    bottom: 20px;
+    z-index: 99999;
+    right: 20px;
+    background: linear-gradient(90deg, #FF4E50 0%, #F9D423 124.44%);
+    padding: 12px 14px;
+    border-radius: 40px;
+    cursor: pointer;
+    opacity: .6;
+}
+#button-scroll-top .scroll-icon {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+    transition: .3s;
+}
+
+
+
+
+@media only screen and (max-width: 991px) {
+footer {
+    position: relative;
+}
+.content-block {
+    width: 90%;
+}
+footer .footer-list {
+    gap: 25px;
+    justify-content: center;
+}
+.dis-flex {
+    flex-wrap: wrap;
+}
+footer .footer-logo {
+    flex: none;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+footer .footer-copyrights {
+    flex: none;
+    text-align: center;
+    width: 100%;
+}
+
+
+}
+
+
+
+
+
+
+
+import { useEffect } from "react";
+import footerLogo from "../assets/logo-footer.svg";
+import scrollArrow from "../assets/arrow-prev.svg";
+import "./Footer.css";
+
+export default function Footer() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const btn = document.getElementById("button-scroll-top");
+      if (!btn) return;
+
+      if (window.scrollY > 300) {
+        btn.classList.add("show-scroll-top");
+      } else {
+        btn.classList.remove("show-scroll-top");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const sendAnalytics = (name) => {
+    console.log("Analytics:", name);
+  };
+
+  return (
+    <>
+      {/* Anchor for scroll-to-top */}
+      <div id="top"></div>
+
+      <footer className="footer">
+        <div className="content-block">
+
+          {/* FOOTER NAVIGATION */}
+          <ul className="dis-flex footer-list">
+            <li>
+              <a href="#top" onClick={() => sendAnalytics("header")}>
+                Header
+              </a>
+            </li>
+            <li>
+              <a href="#banner-top" onClick={() => sendAnalytics("home")}>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#about-block" onClick={() => sendAnalytics("aboutUs")}>
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#our-apps-blocks-scroll"
+                onClick={() => sendAnalytics("ourApps")}
+              >
+                Our Apps
+              </a>
+            </li>
+            <li>
+              <a
+                href="#comments-block"
+                onClick={() => sendAnalytics("comments")}
+              >
+                Comments
+              </a>
+            </li>
+            <li>
+              <a href="#faq-block" onClick={() => sendAnalytics("faqs")}>
+                FAQ
+              </a>
+            </li>
+            <li>
+              <a href="#contact-block" onClick={() => sendAnalytics("contact")}>
+                Contact
+              </a>
+            </li>
+          </ul>
+
+          {/* FOOTER BRAND */}
+          <div className="dis-flex footer-bottom">
+            <div className="footer-logo">
+              <img src={footerLogo} alt="Footer Logo" />
+            </div>
+
+            <div className="footer-copyrights">
+              <p className="pad-b-15">
+                <a
+                  href="http://unfoldlabs.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  UnfoldLabs Inc
+                </a>{" "}
+                © {new Date().getFullYear()}. All Rights Reserved.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </footer>
+
+      {/* SCROLL TO TOP BUTTON */}
+      <a
+        href="#top"
+        id="button-scroll-top"
+        onClick={scrollToTop}
+      >
+        <img
+          src={scrollArrow}
+          className="scroll-icon"
+          alt="Scroll to top"
+        />
+      </a>
+    </>
+  );
+}
