@@ -1,6 +1,8 @@
+import { useState } from "react";
 import "./OurApps.css";
+import arrowIcon from "../assets/images/arrow-prev.svg";
 
-// Logos
+/* LOGOS */
 import securemeLogo from "../assets/images/secureme-logo.svg";
 import ufallalertLogo from "../assets/images/ufallalert-logo.svg";
 import unfoldquotesLogo from "../assets/images/unfoldquotes.svg";
@@ -12,7 +14,7 @@ import myfamilyLogo from "../assets/images/myfamily-logo.svg";
 import walletLogo from "../assets/images/2020wallet-logo.png";
 import redgreenLogo from "../assets/images/red-green-logo.png";
 
-// Screens
+/* SCREENS */
 import securemeScreen from "../assets/images/secureme-screen.png";
 import ufallScreen from "../assets/images/ufall-alert-screen.png";
 import unfoldquotesScreen from "../assets/images/unfoldquotes-screen.png";
@@ -115,42 +117,82 @@ const apps = [
 ];
 
 export default function OurApps() {
+  const [active, setActive] = useState(0);
+
+  const next = () =>
+    setActive((prev) => (prev + 1) % apps.length);
+
+  const prev = () =>
+    setActive((prev) => (prev - 1 + apps.length) % apps.length);
+
   return (
     <div className="our-apps-blocks" id="our-apps-blocks-scroll">
       <div className="content-block">
+
+        {/* HEADING */}
         <div className="our-apps-heading">
           <p className="sub-heading">Our</p>
           <h3 className="heading">Apps</h3>
         </div>
 
-        <div className="our-apps-list">
-          {apps.map((app) => (
-            <div className="app-card" key={app.name}>
-              <div className="app-info">
-                <a href={app.link} target="_blank" rel="noreferrer">
-                  <img
-                    src={app.logo}
-                    alt={app.name}
-                    className="app-logo"
-                  />
-                </a>
-                <h4 className="app-title">{app.name}</h4>
-                <p className="app-desc">{app.desc}</p>
-              </div>
+        {/* MAIN DISPLAY */}
+        <div className="app-main">
 
-              <div className="app-screen">
-                <img src={app.screen} alt={`${app.name} screen`} />
-              </div>
+          <div className="app-left">
+            <img
+              src={apps[active].logo}
+              className="main-logo"
+              alt={apps[active].name}
+            />
+            <h4>{apps[active].name}</h4>
+            <p>{apps[active].desc}</p>
+          </div>
+
+          <div className="app-right">
+            <img
+              src={apps[active].screen}
+              className="main-screen"
+              alt={apps[active].name}
+            />
+          </div>
+
+        </div>
+
+        {/* ICON STRIP */}
+        <div className="icon-strip">
+          {apps.map((app, index) => (
+            <div
+              key={app.name}
+              className={`icon-card ${index === active ? "active" : ""}`}
+              onClick={() => setActive(index)}
+            >
+              <img src={app.logo} alt={app.name} />
+              <span>{app.name}</span>
             </div>
           ))}
         </div>
-        <div>
-            <ul>
-                <li>
-                    
-                </li>
-            </ul>
+
+        {/* IMAGE ARROWS */}
+        <div className="arrow-controls">
+
+          <button className="arrow-btn" onClick={prev}>
+            <img
+              src={arrowIcon}
+              className="arrow left"
+              alt="Previous"
+            />
+          </button>
+
+          <button className="arrow-btn" onClick={next}>
+            <img
+              src={arrowIcon}
+              className="arrow right"
+              alt="Next"
+            />
+          </button>
+
         </div>
+
       </div>
     </div>
   );

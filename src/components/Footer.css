@@ -9,7 +9,9 @@ footer {
   width: 100%;
   background: transparent;
 }
-
+.nav-link{
+    text-decoration: none;
+}
 /*.content-block {
     width: 1140px;
     margin: auto;

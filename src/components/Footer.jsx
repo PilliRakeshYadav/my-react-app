@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import footerLogo from "../assets/logo-footer.svg";
-import scrollArrow from "../assets/arrow-prev.svg";
+import scrollArrow from "../assets/images/arrow-prev.svg";
 import "./Footer.css";
 
 
@@ -38,12 +38,12 @@ export default function Footer() {
       <footer className="footer">
         <div className="content-block">
           <ul className="dis-flex footer-list">
-            <li><a href="#banner-top" onClick={() => sendAnalytics("home")}>Home</a></li>
-            <li><a href="#about-block" onClick={() => sendAnalytics("aboutUs")}>About us</a></li>
-            <li><a href="#our-apps-blocks-scroll" onClick={() => sendAnalytics("recApps")}>Recomended Apps</a></li>
-            <li><a href="#comments-block" onClick={() => sendAnalytics("comments")}>Comments</a></li>
-            <li><a href="#faq-block" onClick={() => sendAnalytics("faqs")}>FAQS</a></li>
-            <li><a href="#contact-block" onClick={() => sendAnalytics("contact")}>Contact</a></li>
+            <li><a href="#banner-top" className="nav-link" onClick={() => sendAnalytics("home")}>Home</a></li>
+            <li><a href="#about-block" className="nav-link" onClick={() => sendAnalytics("aboutUs")}>About us</a></li>
+            <li><a href="#our-apps-blocks-scroll" className="nav-link" onClick={() => sendAnalytics("recApps")}>Recomended Apps</a></li>
+            <li><a href="#comments-block" className="nav-link" onClick={() => sendAnalytics("comments")}>Comments</a></li>
+            <li><a href="#faq-block" className="nav-link" onClick={() => sendAnalytics("faqs")}>FAQS</a></li>
+            <li><a href="#contact-block" className="nav-link" onClick={() => sendAnalytics("contact")}>Contact</a></li>
           </ul>
 
           <div className="dis-flex">
@@ -53,7 +53,7 @@ export default function Footer() {
 
             <div className="footer-copyrights">
               <p className="pad-b-15">
-                <a href="http://unfoldlabs.com/" target="_blank" rel="noreferrer">
+                <a href="http://unfoldlabs.com/" className="nav-link" target="_blank" rel="noreferrer">
                   UnfoldLabs Inc
                 </a>{" "}
                 ©. All Rights Reserved.

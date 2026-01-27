@@ -17,6 +17,7 @@
 .app-logo {
   width: 160px;
   height: 55px;
+  padding-left: 40px;
 }
 
 .header-actions {
@@ -28,6 +29,7 @@
 .menu-icon {
   width: 22px;
   cursor: pointer;
+  padding-right: 40px;
 }
 
 .dark-mode-button {

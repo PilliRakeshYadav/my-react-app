@@ -29,6 +29,19 @@
   font-size: 15px;
   outline: none;
 }
+.dark .compare-box input {
+  flex: 1;
+  height: 54px;
+
+  padding: 0 18px;
+  border-radius: 14px;
+
+  border: 1px solid #797197;
+  background: #222;
+
+  font-size: 15px;
+  outline: none;
+}
 
 .compare-box input:focus-visible {
     border: 1px solid #c4c4c4;

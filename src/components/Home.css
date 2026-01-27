@@ -1,12 +1,10 @@
 .home-section {
   width: 100%;
   position: relative;
-
   background-image: url("../assets/home-bg2.svg");
   background-size: contain;
   background-position: top center;
   background-repeat: no-repeat;
-
   overflow: hidden;
 }
 
@@ -14,15 +12,20 @@
   background-image: url("../assets/home-bg2-dark.svg");
    background-size: contain;
 }
-
+ 
 [data-theme="dark"] .home-section::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
   pointer-events: none;
+    background: rgba(30,6,119,0);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: -1;
 }
-
+ 
 .compare-wrapper {
   position: relative;
   width: 100%;
@@ -31,26 +34,26 @@
    display: flex;
   justify-content: center;
   position: relative;
-  padding-top: 30px;
-  margin-left: 40px;
+  padding-top: 50px;
+  margin-left: 70px;
   margin-top: -5px;
 }
-
+ 
 .center-content {
   display: block;
   padding-top: 140px;            
   padding-left: 120px;          
-  padding-bottom: 80px;
+  padding-bottom: 30px;
 }
-
+ 
 .dis-flex {
   display: flex;
 }
-
+ 
 .item-center {
   align-items: center;
 }
-
+ 
 .hero-row {
   display: flex;
   align-items: flex-start;
@@ -59,38 +62,54 @@
   flex-wrap: wrap;
   font-family: "LatoBold";
 }
-
+ 
 .hero-text {
   max-width: 460px;
 }
 .hero-text .main-title {
   margin: 0;
-  font-size: 34px; 
+  font-size: 34px;
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.2px;
   color: #ffffff;
 }
-
+.dark .hero-text .main-title {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+  color:#bac3f3 ;
+}
+ 
 .main-title .line-1,
 .main-title .line-2 {
   display: block;
   white-space: nowrap;
 }
-
+ 
 .main-title .dis-block {
   display: block;
   margin-top: 8px;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.15px;
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
 }
-
+.dark .main-title .dis-block {
+  display: block;
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+  color: #bac3f3;
+}
+ 
 .how-it-works {
   margin-top: -10px;
 }
-
+ 
 .how-it-works-p {
   font-size: 28px;
   font-weight: 500;
@@ -98,7 +117,13 @@
   margin-right: 14px;
   cursor: pointer;
 }
-
+.dark .how-it-works-p {
+  font-size: 28px;
+  font-weight: 500;
+  color: #bac3f3;
+  margin-right: 14px;
+  cursor: pointer;
+}
 .how-image {
   width: 90px;
   height: 90px;
@@ -106,28 +131,29 @@
   margin-top: 20px;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
-
+ 
 .how-image:hover {
   transform: scale(1.12);
   opacity: 0.9;
 }
-
+ 
 .compare-image {
   width: 320px;
   max-width: 90%;
+  margin-left: 20px;
   margin-top: -40px;
 }
 .platform-bar {
   position: absolute;
   top: -28px;
   left: 0;
-
+margin-top:30px;
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
-
+ 
+ 
 /* .platform-switch {
   display: flex;
   background: white;
@@ -147,13 +173,13 @@
   cursor: pointer;
   padding: 4px;
 }
-
-
+ 
+ 
 /* .platform-switch button {
   display: flex;
   align-items: center;
   gap: 6px;
-
+ 
   border: none;
   padding: 6px 12px;
   background: transparent;
@@ -173,7 +199,7 @@
   justify-content: center;
   padding: 0;
 }
-/* 
+/*
 .platform-switch button img {
   width: 18px;
   height: 18px;
@@ -186,8 +212,9 @@
 .platform-switch button.active img {
   filter: invert(100%) brightness(200%);
 }
-
-
+.dark .platform-switch button.active img {filter:
+invert(0%) sepia(4%) saturate(7500%) hue-rotate(255deg) brightness(104%) contrast(104%);
+}
 .platform-switch::before {
   content: "";
   position: absolute;
@@ -199,33 +226,45 @@
   transition: 0.3s ease;
   z-index: 1;
 }
+.dark  .platform-switch{
+ background: var(--white-fff);
+}
+ 
+ .dark .platform-switch.android-active::before{
+  background:#ffffff;
+  filter: none;
+ }
 .platform-switch.android-active::before {
   left: 4px;
 }
 .platform-switch.ios-active::before {
   left: 34px;
 }
-
-
+.dark .platform-switch.ios-active::before {
+  background: #ffffff;
+  left: 34px;
+}
+ 
+ 
 /* .platform-switch button.active {
   background: black;
   font-weight: 600;
   border-radius: 35px;
 } */
-
+ 
 .country-select {
   display: flex;
   align-items: center;
   gap: 6px;
-
+ 
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(12px);
-
+ 
   padding: 6px 10px;
   border-radius: 14px;
   cursor: pointer;
 }
-
+ 
 .country-select select {
   background: transparent;
   border: none;
@@ -234,21 +273,17 @@
   outline: none;
   cursor: pointer;
 }
-
-
+ 
+ 
 @media (max-width: 768px) {
   .platform-bar {
     top: -26px;
     left: 12px;
     gap: 8px;
   }
-
+ 
   .platform-switch button {
     padding: 5px 10px;
     font-size: 12px;
   }
 }
-
-
-  
-
