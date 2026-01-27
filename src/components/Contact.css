@@ -1,83 +1,3 @@
-/* .contact-section {
-  padding: 80px 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.contact-card {
-  width: 100%;
-  max-width: 900px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 18px;
-  padding: 40px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.contact-card h2 {
-  font-size: 36px;
-  color: #d9534f;
-  margin-bottom: 30px;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 25px;
-}
-
-.input-group label {
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.input-group input,
-.input-group textarea {
-  padding: 12px 14px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  outline: none;
-}
-
-.input-group textarea {
-  resize: none;
-  height: 120px;
-}
-
-.input-group input:focus,
-.input-group textarea:focus {
-  border-color: #f09819;
-}
-
-.error {
-  color: #d9534f;
-  font-size: 14px;
-  margin-top: 6px;
-}
-
-.send-btn {
-  background: linear-gradient(135deg, #ff512f, #f09819);
-  color: #fff;
-  border: none;
-  padding: 14px 30px;
-  font-size: 16px;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-.send-btn:hover {
-  opacity: 0.9;
-}
-
-.success-box {
-  background: #d4edda;
-  color: #155724;
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 16px;
-  text-align: center;
-} */
-
 .contact-block {
     gap: 45px;
     justify-items: center;
@@ -108,84 +28,37 @@
 .contact-form1 {
     gap: 50px;
 }
-.contact-section .contact-email {
-    width: 30%;
+
+/* Target the email input specifically */
+.contact-form1 .contact-email {
+    width: 25%; /* Email field - smaller */
 }
-.contact-section .input-field {
-    width: 60%;
+
+/* Target the message input (second input-field without contact-email class) */
+.contact-form1 .input-field:not(.contact-email) {
+    width: 65%; /* Message field - larger */
 }
+
 .contact-section .input-field input {
     width: 100%;
     border: none;
     border-bottom: 2px solid #bbb;
     padding: 15px 0;
-}
-.contact-section .btn-send-contact {
-    width: 54px;
-    height: 46.35px;
-    background: linear-gradient(90deg, #ff4e50 0%, #f9d423 124.44%);
-    box-shadow: 0px 4px 4px rgba(0,0,0,.25);
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-.contact-section .contact-details {
-    padding: 50px 0 32px 0;
-}
-.gap-40 {
-    gap: 40px;
-}
-.dis-flex {
-    display: flex;
-}
-.contact-section .in-contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.contact-section .in-contact p {
-    color: #555;
-    padding-left: 10px;
-}
-p {
-    line-height: 25px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* .contact-form1 {
-    gap: 50px;
-}
-.contact-section .contact-email {
-    width: 30%;
-}
-.contact-section .input-field {
-    width: 60%;
-}
-.contact-section .input-field input {
-    width: 100%;
     background: transparent;
-    color: #000;
-    border: none;
-    border-bottom: 2px solid #bbb;
-    padding: 15px 0;
-}
-.gap-40 {
-    gap: 40px;
+    outline: none; /* Remove default outline */
 }
 
-.errorMsg {
-    color: red;
+/* Focus styles for inputs */
+.contact-section .input-field input:focus {
+    border-bottom: 2px solid #FF4E50; /* Red color when focused */
+    box-shadow: none; /* Remove any box shadow on focus */
 }
+
+/* Remove the rectangular box that appears on focus */
+.contact-section .input-field input:focus-visible {
+    outline: none;
+}
+
 .contact-section .btn-send-contact {
     width: 54px;
     height: 46.35px;
@@ -198,6 +71,12 @@ p {
 .contact-section .contact-details {
     padding: 50px 0 32px 0;
 }
+.gap-40 {
+    gap: 40px;
+}
+.dis-flex {
+    display: flex;
+}
 .contact-section .in-contact {
     display: flex;
     justify-content: center;
@@ -207,19 +86,9 @@ p {
     color: #555;
     padding-left: 10px;
 }
-.heading {
-    background: linear-gradient(90deg, #FF4E50 0%, #F9D423 124.44%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.dis-flex {
-    display: flex;
-}
 p {
     line-height: 25px;
-} */
+}
 
 .dark .heading {
     background: var(--color-blue);
@@ -230,6 +99,12 @@ p {
     background: none;
     color: var(--white-fff-2);
 }
+
+/* Dark mode focus styles */
+.dark .contact-section .input-field input:focus {
+    border-bottom: 2px solid #FF4E50; /* Same red color in dark mode */
+}
+
 .dark .errorMsg {
     color: #f9b2b2;
 }
@@ -248,25 +123,16 @@ p {
     font-size: 26px;
 }
 .content-block {
-    width: 1140px;
-    margin: auto;
-}
-.content-block {
     width: 90%;
-}
-.heading {
-    font-size: 26px;
 }
 .dis-flex {
     flex-wrap: wrap;
 }
-.contact-section .input-field {
+/* Responsive adjustments */
+.contact-form1 .contact-email,
+.contact-form1 .input-field:not(.contact-email) {
     flex: none;
-    width: 100%;
-}
-.contact-section .input-field {
-    flex: none;
-    width: 100%;
+    width: 100%; /* Full width on mobile */
 }
 .contact-section .btn-send-contact {
     margin: auto;
