@@ -63,14 +63,17 @@ export default function Footer() {
         </div>
       </footer>
 
-      {/* Scroll To Top Button */}
-      <a
-        href="#top"
-        id="button-scroll-top"
-        onClick={scrollToTop}
-      >
-        <img src={scrollArrow} className="scroll-icon" alt="Scroll to top" />
-      </a>
+     {/* Scroll To Top Button */}
+<a
+  href="#top"
+  id="button-scroll-top"
+  className="show-scroll-top"
+  onClick={scrollToTop}
+  onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
+  onMouseLeave={(e) => e.currentTarget.style.opacity = '0.6'}
+>
+  <img src={scrollArrow} className="scroll-icon" alt="Scroll to top" />
+</a>
     </>
   );
 }
