@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import userIcon from "../assets/user-icon-default.svg";
 import closeIcon from "../assets/close-btn.svg";
 import uploadIcon from "../assets/upload-icon.svg";
@@ -9,6 +9,11 @@ export default function Comments() {
   const [showPost, setShowPost] = useState(false);
   const [previewImg, setPreviewImg] = useState(null);
   const [fileName, setFileName] = useState("");
+  const [slideKey, setSlideKey] = useState(0);
+  
+  // Auto-slide interval reference
+  const autoSlideRef = useRef(null);
+  const sliderRef = useRef(null);
 
   // ALL testimonials
   const testimonials = [
@@ -26,6 +31,66 @@ export default function Comments() {
     slides.push(testimonials.slice(i, i + 3));
   }
 
+  // For infinite loop
+  const totalSlides = slides.length;
+
+  // Auto-slide functionality
+  useEffect(() => {
+    // Start auto-sliding after component mounts
+    startAutoSlide();
+    
+    // Clean up interval on component unmount
+    return () => {
+      if (autoSlideRef.current) {
+        clearInterval(autoSlideRef.current);
+      }
+    };
+  }, []);
+
+  // Function to start auto-sliding
+  const startAutoSlide = () => {
+    // Clear any existing interval
+    if (autoSlideRef.current) {
+      clearInterval(autoSlideRef.current);
+    }
+    
+    // Set new interval (5 seconds)
+    autoSlideRef.current = setInterval(() => {
+      goToNextSlide();
+    }, 5000);
+  };
+
+  // Function to go to next slide with infinite loop
+  const goToNextSlide = () => {
+    const nextSlide = (activeSlide + 1) % totalSlides;
+    
+    // Force reflow to ensure smooth animation
+    setSlideKey(prev => prev + 1);
+    
+    // Set the next slide
+    setActiveSlide(nextSlide);
+    
+    // Reset the interval
+    if (autoSlideRef.current) {
+      clearInterval(autoSlideRef.current);
+      startAutoSlide();
+    }
+  };
+
+  // Function to handle manual slide change
+  const handleSlideChange = (index) => {
+    // Force reflow to ensure smooth animation
+    setSlideKey(prev => prev + 1);
+    
+    setActiveSlide(index);
+    
+    // Reset the auto-slide timer when user manually changes slide
+    if (autoSlideRef.current) {
+      clearInterval(autoSlideRef.current);
+      startAutoSlide();
+    }
+  };
+
   return (
     <div className="container-block sections test-block" id="comments-block">
       <div className="content-block">
@@ -42,28 +107,33 @@ export default function Comments() {
           </button>
 
           {/* SLIDER */}
-          <div className="slidera">
+          <div className="slidera" ref={sliderRef}>
             <div className="flex-viewport">
-              <ul className="slides">
+              <div 
+                key={slideKey}
+                className="slides-wrapper"
+                style={{
+                  transform: `translateX(-${activeSlide * 100}%)`,
+                  transition: 'transform 0.6s ease-in-out'
+                }}
+              >
                 {slides.map((group, index) => (
-                  <li
+                  <div
                     key={index}
-                    className={`slide ${
-                      index === activeSlide ? "flex-active-slide" : ""
-                    }`}
+                    className="slide"
                   >
                     <div className="testimonials">
                       {group.map((item, i) => (
                         <Testimonial
-                          key={i}
+                          key={`${index}-${i}`}
                           name={item.name}
                           text={item.text}
                         />
                       ))}
                     </div>
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
 
@@ -74,7 +144,9 @@ export default function Comments() {
                 key={index}
                 className={activeSlide === index ? "slick-active" : ""}
               >
-                <button onClick={() => setActiveSlide(index)} />
+                <button 
+                  onClick={() => handleSlideChange(index)}
+                />
               </li>
             ))}
           </ul>
