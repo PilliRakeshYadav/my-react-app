@@ -1,3 +1,6 @@
+.errorMsg{
+    color: #ff4e50;
+}
 .contact-block {
     gap: 45px;
     justify-items: center;
