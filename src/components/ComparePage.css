@@ -1,0 +1,295 @@
+.comparepage-content-block {
+  margin: auto;
+  width: 1140px;
+}
+.page-offset {
+  padding-top: 165px;
+  margin-top: -80px;
+}
+
+
+.justify-space-between {
+    justify-content: space-between;
+}
+.dis-flex {
+    display: flex;
+}
+.bredcrumbs-ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    padding: 10px 0;
+    align-self: center;
+}
+.pad-b-0 {
+    padding-bottom: 0px;
+}
+.bredcrumbs-ul .bredcrumbs-list {
+    color: #98a2b3;
+}
+.bredcrumbs-ul .bredcrumbs-list .bredcrumbs-link {
+    color: #475467;
+    position: relative;
+    text-decoration: none;
+}
+.dark .bredcrumbs-ul .bredcrumbs-list .bredcrumbs-link {
+    color: #ffffff;
+}
+.bredcrumbs-ul .bredcrumbs-list .bredcrumbs-link::after {
+    content: "";
+    background: url(../assets/dropdown-icon.svg);
+    display: block;
+    width: 20px;
+    height: 15px;
+    transform: rotate(-90deg);
+    position: absolute;
+    right: -25px;
+    top: 6px;
+    top: 4px;
+    background-size: cover;
+}
+.get-report-n-back {
+    margin: 15px 0;
+}
+.get-report-n-back {
+    margin: 15px 0;
+}
+.get-report-n-back .report-download {
+    float: right;
+}
+.gap-15-lr {
+    gap: 0px 15px;
+}
+.dis-flex {
+    display: flex;
+}
+.get-report-n-back .report-btn {
+    background: linear-gradient(90deg, #C21500 0%, #FFC500 176.32%);
+    box-shadow: 0px 0px 16px rgba(0,0,0,.2);
+    border-radius: 75px;
+    color: #fff;
+    height: 40px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+.mar-auto {
+    margin: auto;
+}
+
+.search-apps .search-apps-all {
+    padding-bottom: 50px;
+}
+.gap-50 {
+    gap: 50px;
+}
+.dis-flex {
+    display: flex;
+}
+.search-apps .search-apps-all .searched-apps {
+    flex: 2;
+    display: flex;
+    gap: 0px 45px;
+    flex-wrap: wrap;
+    border: 1px solid #d9d9d9 !important;
+    padding: 20px;
+    align-content: start;
+}
+.search-apps .searchtitle {
+    flex: 3;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #8a8989;
+}
+.search-apps .searched-apps-in {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.search-apps .search-apps-all .searched-apps .searched-app-list {
+    position: relative;
+    left: 0px;
+}
+.search-apps .search-apps-all .searched-apps .searched-app-list {
+    cursor: pointer;
+    width: 120px;
+    height: 175px;
+    display: flex;
+    justify-content: center;
+    padding: 14px;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    transition: .3s;
+    align-self: baseline;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,.07);
+    border: 1px solid rgba(0,0,0,0);
+}
+.searched-apps input[type=radio] {
+    display: none;
+}
+
+.search-apps .search-apps-all .searched-apps .searched-app-list .app-logo {
+    padding: 25px;
+    height: 40px;
+}
+
+.search-apps .search-apps-all .searched-apps .searched-app-list .app-logo .app-logo-img {
+    padding: 5px;
+    width: 60px;
+    transition: .3s;
+    opacity: .8;
+}
+.search-apps .search-apps-all .searched-apps .searched-app-list .app-names {
+    margin-top: 12px;
+}
+.search-apps .search-apps-all .searched-apps .searched-app-list .app-names-sub {
+    color: #bcbcbc;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-align: center;
+}
+p {
+    line-height: 25px;
+}
+.search-apps .search-apps-all .searched-apps .searched-app-list .title-company {
+    color: #bcbcbc;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+}
+.search-apps .search-apps-all .searched-apps .searched-app-list:hover {
+    background: #eb8901 !important;
+}
+.search-apps .search-apps-all .searched-apps .selected-app {
+    background: #eb8901 !important;
+}
+.search-apps .search-apps-all .searched-apps .searched-app-list:hover .app-logo-img {
+    background: #fff;
+    border-radius: 8px;
+    filter: grayscale(0);
+    opacity: 1;
+}
+.search-apps .search-apps-all .searched-apps .selected-app .app-logo-img {
+    filter: grayscale(0) !important;
+    background: #fff !important;
+    border-radius: 8px;
+    opacity: 1 !important;
+}
+
+.searched-apps input[type=radio] {
+  display: none;
+}
+
+.search-apps .searched-app-list.selected-app::after {
+  content: "✓";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.search-apps .searched-app-list.selected-app .app-logo-img {
+  transform: scale(0.75); 
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px;
+}
+.search-apps .searched-app-list .app-logo {
+  height: 80px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-apps .searched-app-list .app-logo-img {
+  width: 60px;
+  transition: transform 0.2s ease;
+}
+
+.search-apps .searched-app-list .app-log {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-apps .searched-app-list:hover .app-logo-img {
+  transform: scale(0.75);
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px;
+}
+
+/* .searched-not-found{
+    color: red;
+    text-align: center;
+} */
+
+.dark .get-report-n-back .report-btn {
+    background: var(--blue-shade1) !important;
+    color: var(--white-fff-2) !important;
+}
+.dark .search-apps .search-apps-all .searched-apps .searched-app-list:hover {
+    background: var(--black-000) !important;
+}
+.dark .search-apps .search-apps-all .searched-apps .selected-app {
+    background: var(--black-000) !important;
+}
+.dark .search-apps .search-apps-all .searched-apps .searched-app-list {
+    background: var(--color-blue-dark-3);
+    border: 1px solid var(--color-779);
+}
+
+.toast-failure1 { 
+    background: rgba(245,66,66,.6) !important; 
+    border: 1px solid rgba(255,0,0,.3882352941); 
+    color: #fff; 
+}
+.custom-toast { 
+    position: fixed; 
+    left: 0; 
+    right: 0; 
+    z-index: 999; 
+    background: #fff; 
+    width: auto; 
+    padding: 8px 18px;   
+    text-align: center; 
+    margin: auto; 
+    top: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0px 10px 40px 0px rgba(0,0,0,.37); 
+    backdrop-filter: blur(5px); 
+    display: table;
+}
+
+.p-text-toast { 
+    display: flex; 
+    gap: 10px; 
+    justify-content: center;
+    align-items: center;  
+    margin: 0;            
+    line-height: 18px;
+}
+
+
+@media (max-width: 900px) {
+    .dis-flex {
+        flex-wrap: wrap;
+    }
+    .comparepage-content-block {
+    width: 430px;
+}
+.search-apps .searched-apps-in {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+}

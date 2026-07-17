@@ -1,0 +1,168 @@
+.errorMsg {
+    color: #ff4e50;
+}
+
+.contact-wrapper {
+    width: 100%;
+    background: #fdfdfd;
+    padding-bottom: 40px;
+    padding-top: 50px;
+}
+
+body[data-theme="dark"] .contact-wrapper {
+    background: #252035;
+}
+
+.contact-content-block {
+    width: 1140px;
+    margin: auto;
+    padding-bottom: 0px;
+}
+
+.contact-section {
+    background: var(--white-fff);
+    box-shadow: 5px 5px 21px 3px rgba(0, 0, 0, .08);
+    border-radius: 10px;
+    padding: 30px;
+    padding-bottom: 0px;
+    margin-bottom: 50px;
+}
+
+.contact-heading {
+    background: linear-gradient(90deg, #FF4E50 0%, #F9D423 124.44%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    font-size: 40px;
+    margin: 0px;
+}
+
+.dis-flex {
+    display: flex;
+}
+
+.contact-form1 {
+    gap: 50px;
+    margin-top: 45px;
+}
+
+
+.contact-form1 .contact-email {
+    width: 25%;
+}
+
+.contact-form1 .input-field:not(.contact-email) {
+    width: 65%;
+}
+
+.contact-section .input-field input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #bbb;
+    padding: 15px 0;
+}
+
+.contact-section .input-field input:focus {
+    border-bottom: 2px solid #FF4E50;
+    box-shadow: none;
+}
+
+
+.contact-section .input-field input:focus-visible {
+    outline: none;
+}
+
+.contact-section .btn-send-contact {
+    width: 54px;
+    height: 46.35px;
+    background: linear-gradient(90deg, #ff4e50 0%, #f9d423 124.44%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-section .contact-details {
+    padding: 38px 0 15px 0;
+}
+
+.gap-40 {
+    gap: 40px;
+}
+
+.dis-flex {
+    display: flex;
+}
+
+.contact-section .in-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-section .in-contact p {
+    color: #555;
+    padding-left: 10px;
+}
+
+p {
+    line-height: 25px;
+}
+
+.dark .heading {
+    background: var(--color-blue);
+    -webkit-background-clip: text;
+}
+
+.dark .contact-section .input-field input {
+    background: none;
+    color: var(--white-fff-2);
+}
+
+
+.dark .contact-section .input-field input:focus {
+    border-bottom: 2px solid #FF4E50;
+}
+
+.dark .errorMsg {
+    color: #f9b2b2;
+}
+
+.dark .contact-section .btn-send-contact {
+    background: var(--color-blue);
+}
+
+.dark .contact-section .in-contact img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+.dark .contact-section .in-contact p {
+    color: var(--white-fff-2);
+}
+
+@media only screen and (max-width: 767px) {
+    .contact-section .contact-form1 {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .contact-section .btn-send-contact {
+        margin-left: 40%;
+    }
+
+    .contact-form1 .contact-email,
+    .contact-form1 .input-field:not(.contact-email) {
+        width: 100%;
+    }
+
+    .contact-section .contact-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 32px 0;
+    }
+
+    .contact-section .in-contact {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}

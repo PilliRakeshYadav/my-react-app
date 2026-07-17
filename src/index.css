@@ -1,0 +1,47 @@
+/* LIGHT MODE (default) */
+:root {
+  --header-bg: #ffffff;
+  --card-bg: #ffffff;
+  --text-color: #222;
+  --page-bg: #f4f4f4;
+}
+
+/* DARK MODE */
+body[data-theme="dark"] {
+  --header-bg: #1e1e1e;
+  --card-bg: #2a2a2a;
+  --text-color: #f1f1f1;
+  --page-bg: #121212;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--text-color);
+  margin: 0;
+  font-family: LatoRegular, sans-serif;
+}
+
+html {
+  scroll-behavior: auto !important;
+}
+
+
+/* .post-testimonials-index {
+    float: right;
+    margin-top: -75px;
+    border-radius: 75px;
+    color: #fff;
+    height: 40px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    color: #fff !important;
+    height: 40px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: #fd7d41 !important;
+} */
